@@ -1,0 +1,693 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>http常见请求头与响应头 | yufengの小屋</title><meta name="keywords" content="http,请求头响应头"><meta name="author" content="yuf"><meta name="copyright" content="yuf"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="http协议：1. 关于HTTP消息头HTTP消息头是在，客户端请求（Request）或服务器响应（Response）时传递的，位请求或响应的第一行，HTTP消息体（请求或响应的内容）是其后传输。HTTP消息头，以明文的字符串格式传送，是以冒号分隔的键&#x2F;值对，如：Accept-Charset: utf-8，每一个消息头最后以回车符(CR)和换行符(LF)结尾。HTTP消息头结束后，会用一">
+<meta property="og:type" content="article">
+<meta property="og:title" content="http常见请求头与响应头">
+<meta property="og:url" content="https://yufxxx.gitee.io/2022/10/31/http%E5%B8%B8%E8%A7%81%E8%AF%B7%E6%B1%82%E5%A4%B4%E4%B8%8E%E5%93%8D%E5%BA%94%E5%A4%B4/index.html">
+<meta property="og:site_name" content="yufengの小屋">
+<meta property="og:description" content="http协议：1. 关于HTTP消息头HTTP消息头是在，客户端请求（Request）或服务器响应（Response）时传递的，位请求或响应的第一行，HTTP消息体（请求或响应的内容）是其后传输。HTTP消息头，以明文的字符串格式传送，是以冒号分隔的键&#x2F;值对，如：Accept-Charset: utf-8，每一个消息头最后以回车符(CR)和换行符(LF)结尾。HTTP消息头结束后，会用一">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://yufxxx.gitee.io/2022/10/31/http%E5%B8%B8%E8%A7%81%E8%AF%B7%E6%B1%82%E5%A4%B4%E4%B8%8E%E5%93%8D%E5%BA%94%E5%A4%B4/1.png">
+<meta property="article:published_time" content="2022-10-31T08:16:10.000Z">
+<meta property="article:modified_time" content="2022-11-02T12:27:11.383Z">
+<meta property="article:author" content="yuf">
+<meta property="article:tag" content="http">
+<meta property="article:tag" content="请求头响应头">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://yufxxx.gitee.io/2022/10/31/http%E5%B8%B8%E8%A7%81%E8%AF%B7%E6%B1%82%E5%A4%B4%E4%B8%8E%E5%93%8D%E5%BA%94%E5%A4%B4/1.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://yufxxx.gitee.io/2022/10/31/http%E5%B8%B8%E8%A7%81%E8%AF%B7%E6%B1%82%E5%A4%B4%E4%B8%8E%E5%93%8D%E5%BA%94%E5%A4%B4/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"bottom-left"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'http常见请求头与响应头',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-11-02 20:27:11'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.2.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://butterfly.js.org/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">16</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">24</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/2022/10/31/http%E5%B8%B8%E8%A7%81%E8%AF%B7%E6%B1%82%E5%A4%B4%E4%B8%8E%E5%93%8D%E5%BA%94%E5%A4%B4/1.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">yufengの小屋</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">http常见请求头与响应头</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-10-31T08:16:10.000Z" title="发表于 2022-10-31 16:16:10">2022-10-31</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-11-02T12:27:11.383Z" title="更新于 2022-11-02 20:27:11">2022-11-02</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/">前端学习</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="http常见请求头与响应头"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="http协议："><a href="#http协议：" class="headerlink" title="http协议："></a>http协议：</h1><h3 id="1-关于HTTP消息头"><a href="#1-关于HTTP消息头" class="headerlink" title="1. 关于HTTP消息头"></a>1. 关于HTTP消息头</h3><p><code>HTTP消息头</code>是在，客户端请求（Request）或服务器响应（Response）时传递的，位请求或响应的第一行，<code>HTTP消息体</code>（请求或响应的内容）是其后传输。<code>HTTP消息头</code>，以明文的字符串格式传送，是以冒号分隔的键&#x2F;值对，如：<code>Accept-Charset: utf-8</code>，每一个消息头最后以回车符(<code>CR</code>)和换行符(<code>LF</code>)结尾。<code>HTTP消息头</code>结束后，会用一个空白的字段来标识，这样就会出现两个连续的<code>CR-LF</code>。</p>
+<p><code>HTTP消息头</code>由IANA（The Internet Assigned Numbers Authority，互联网数字分配机构）来整理和维护。其标准最早来源于<a target="_blank" rel="noopener" href="http://tools.ietf.org/html/rfc4229">RFC 4229</a>。IANA将其整理到了<a target="_blank" rel="noopener" href="http://www.iana.org/assignments/message-headers/perm-headers.html">消息头</a>文档，文档中还包括了<a target="_blank" rel="noopener" href="http://www.iana.org/assignments/message-headers/message-headers.xhtml#prov-headersl">一些新提出的信息头</a>。</p>
+<p><code>HTTP消息头</code>支持自定义， 自定义的专用消息头一般会添加<code>&#39;X-&#39;</code>前缀。</p>
+<h3 id="2-常用的HTTP请求头"><a href="#2-常用的HTTP请求头" class="headerlink" title="2. 常用的HTTP请求头"></a>2. 常用的<code>HTTP请求头</code></h3><table>
+<thead>
+<tr>
+<th align="left">协议头</th>
+<th align="left">说明</th>
+<th align="left">示例</th>
+<th align="left">状态</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">Accept</td>
+<td align="left">可接受的响应内容类型（<code>Content-Types</code>）。</td>
+<td align="left"><code>Accept: text/plain</code></td>
+<td align="left">固定</td>
+</tr>
+<tr>
+<td align="left">Accept-Charset</td>
+<td align="left">可接受的字符集</td>
+<td align="left"><code>Accept-Charset: utf-8</code></td>
+<td align="left">固定</td>
+</tr>
+<tr>
+<td align="left">Accept-Encoding</td>
+<td align="left">可接受的响应内容的编码方式。</td>
+<td align="left"><code>Accept-Encoding: gzip, deflate</code></td>
+<td align="left">固定</td>
+</tr>
+<tr>
+<td align="left">Accept-Language</td>
+<td align="left">可接受的响应内容语言列表。</td>
+<td align="left"><code>Accept-Language: en-US</code></td>
+<td align="left">固定</td>
+</tr>
+<tr>
+<td align="left">Accept-Datetime</td>
+<td align="left">可接受的按照时间来表示的响应内容版本</td>
+<td align="left">Accept-Datetime: Sat, 26 Dec 2015 17:30:00 GMT</td>
+<td align="left">临时</td>
+</tr>
+<tr>
+<td align="left">Authorization</td>
+<td align="left">用于表示HTTP协议中需要认证资源的认证信息</td>
+<td align="left">Authorization: Basic OSdjJGRpbjpvcGVuIANlc2SdDE&#x3D;&#x3D;</td>
+<td align="left">固定</td>
+</tr>
+<tr>
+<td align="left">Cache-Control</td>
+<td align="left">用来指定当前的请求&#x2F;回复中的，是否使用缓存机制。</td>
+<td align="left"><code>Cache-Control: no-cache</code></td>
+<td align="left">固定</td>
+</tr>
+<tr>
+<td align="left">Connection</td>
+<td align="left">客户端（浏览器）想要优先使用的连接类型</td>
+<td align="left"><code>Connection: keep-alive``Connection: Upgrade</code></td>
+<td align="left">固定</td>
+</tr>
+<tr>
+<td align="left">Cookie</td>
+<td align="left">由之前服务器通过<code>Set-Cookie</code>（见下文）设置的一个HTTP协议Cookie</td>
+<td align="left"><code>Cookie: $Version=1; Skin=new;</code></td>
+<td align="left">固定：标准</td>
+</tr>
+<tr>
+<td align="left">Content-Length</td>
+<td align="left">以8进制表示的请求体的长度</td>
+<td align="left"><code>Content-Length: 348</code></td>
+<td align="left">固定</td>
+</tr>
+<tr>
+<td align="left">Content-MD5</td>
+<td align="left">请求体的内容的二进制 MD5 散列值（数字签名），以 Base64 编码的结果</td>
+<td align="left">Content-MD5: oD8dH2sgSW50ZWdyaIEd9D&#x3D;&#x3D;</td>
+<td align="left">废弃</td>
+</tr>
+<tr>
+<td align="left">Content-Type</td>
+<td align="left">请求体的MIME类型 （用于POST和PUT请求中）</td>
+<td align="left">Content-Type: application&#x2F;x-www-form-urlencoded</td>
+<td align="left">固定</td>
+</tr>
+<tr>
+<td align="left">Date</td>
+<td align="left">发送该消息的日期和时间（以<a target="_blank" rel="noopener" href="http://tools.ietf.org/html/rfc7231#section-7.1.1.1">RFC 7231</a>中定义的”HTTP日期”格式来发送）</td>
+<td align="left">Date: Dec, 26 Dec 2015 17:30:00 GMT</td>
+<td align="left">固定</td>
+</tr>
+<tr>
+<td align="left">Expect</td>
+<td align="left">表示客户端要求服务器做出特定的行为</td>
+<td align="left"><code>Expect: 100-continue</code></td>
+<td align="left">固定</td>
+</tr>
+<tr>
+<td align="left">From</td>
+<td align="left">发起此请求的用户的邮件地址</td>
+<td align="left"><code>From: user@itbilu.com</code></td>
+<td align="left">固定</td>
+</tr>
+<tr>
+<td align="left">Host</td>
+<td align="left">表示服务器的域名以及服务器所监听的端口号。如果所请求的端口是对应的服务的标准端口（80），则端口号可以省略。</td>
+<td align="left"><code>Host: www.itbilu.com:80``Host: www.itbilu.com</code></td>
+<td align="left">固定</td>
+</tr>
+<tr>
+<td align="left">If-Match</td>
+<td align="left">仅当客户端提供的实体与服务器上对应的实体相匹配时，才进行对应的操作。主要用于像 PUT 这样的方法中，仅当从用户上次更新某个资源后，该资源未被修改的情况下，才更新该资源。</td>
+<td align="left">If-Match: “9jd00cdj34pss9ejqiw39d82f20d0ikd”</td>
+<td align="left">固定</td>
+</tr>
+<tr>
+<td align="left">If-Modified-Since</td>
+<td align="left">允许在对应的资源未被修改的情况下返回304未修改</td>
+<td align="left">If-Modified-Since: Dec, 26 Dec 2015 17:30:00 GMT</td>
+<td align="left">固定</td>
+</tr>
+<tr>
+<td align="left">If-None-Match</td>
+<td align="left">允许在对应的内容未被修改的情况下返回304未修改（ 304 Not Modified ），参考 超文本传输协议 的实体标记</td>
+<td align="left">If-None-Match: “9jd00cdj34pss9ejqiw39d82f20d0ikd”</td>
+<td align="left">固定</td>
+</tr>
+<tr>
+<td align="left">If-Range</td>
+<td align="left">如果该实体未被修改过，则向返回所缺少的那一个或多个部分。否则，返回整个新的实体</td>
+<td align="left">If-Range: “9jd00cdj34pss9ejqiw39d82f20d0ikd”</td>
+<td align="left">固定</td>
+</tr>
+<tr>
+<td align="left">If-Unmodified-Since</td>
+<td align="left">仅当该实体自某个特定时间以来未被修改的情况下，才发送回应。</td>
+<td align="left">If-Unmodified-Since: Dec, 26 Dec 2015 17:30:00 GMT</td>
+<td align="left">固定</td>
+</tr>
+<tr>
+<td align="left">Max-Forwards</td>
+<td align="left">限制该消息可被代理及网关转发的次数。</td>
+<td align="left"><code>Max-Forwards: 10</code></td>
+<td align="left">固定</td>
+</tr>
+<tr>
+<td align="left">Origin</td>
+<td align="left">发起一个针对<a target="_blank" rel="noopener" href="http://itbilu.com/javascript/js/VkiXuUcC.html">跨域资源共享</a>的请求（该请求要求服务器在响应中加入一个<code>Access-Control-Allow-Origin</code>的消息头，表示访问控制所允许的来源）。</td>
+<td align="left"><code>Origin: http://www.itbilu.com</code></td>
+<td align="left">固定: 标准</td>
+</tr>
+<tr>
+<td align="left">Pragma</td>
+<td align="left">与具体的实现相关，这些字段可能在请求&#x2F;回应链中的任何时候产生。</td>
+<td align="left"><code>Pragma: no-cache</code></td>
+<td align="left">固定</td>
+</tr>
+<tr>
+<td align="left">Proxy-Authorization</td>
+<td align="left">用于向代理进行认证的认证信息。</td>
+<td align="left">Proxy-Authorization: Basic IOoDZRgDOi0vcGVuIHNlNidJi2&#x3D;&#x3D;</td>
+<td align="left">固定</td>
+</tr>
+<tr>
+<td align="left">Range</td>
+<td align="left">表示请求某个实体的一部分，字节偏移以0开始。</td>
+<td align="left"><code>Range: bytes=500-999</code></td>
+<td align="left">固定</td>
+</tr>
+<tr>
+<td align="left">Referer</td>
+<td align="left">表示浏览器所访问的前一个页面，可以认为是之前访问页面的链接将浏览器带到了当前页面。<code>Referer</code>其实是<code>Referrer</code>这个单词，但RFC制作标准时给拼错了，后来也就将错就错使用<code>Referer</code>了。</td>
+<td align="left">Referer: <a target="_blank" rel="noopener" href="http://itbilu.com/nodejs">http://itbilu.com/nodejs</a></td>
+<td align="left">固定</td>
+</tr>
+<tr>
+<td align="left">TE</td>
+<td align="left">浏览器预期接受的传输时的编码方式：可使用回应协议头<code>Transfer-Encoding</code>中的值（还可以使用”trailers”表示数据传输时的分块方式）用来表示浏览器希望在最后一个大小为0的块之后还接收到一些额外的字段。</td>
+<td align="left"><code>TE: trailers,deflate</code></td>
+<td align="left">固定</td>
+</tr>
+<tr>
+<td align="left">User-Agent</td>
+<td align="left">浏览器的身份标识字符串</td>
+<td align="left"><code>User-Agent: Mozilla/……</code></td>
+<td align="left">固定</td>
+</tr>
+<tr>
+<td align="left">Upgrade</td>
+<td align="left">要求服务器升级到一个高版本协议。</td>
+<td align="left">Upgrade: HTTP&#x2F;2.0, SHTTP&#x2F;1.3, IRC&#x2F;6.9, RTA&#x2F;x11</td>
+<td align="left">固定</td>
+</tr>
+<tr>
+<td align="left">Via</td>
+<td align="left">告诉服务器，这个请求是由哪些代理发出的。</td>
+<td align="left">Via: 1.0 fred, 1.1 itbilu.com.com (Apache&#x2F;1.1)</td>
+<td align="left">固定</td>
+</tr>
+<tr>
+<td align="left">Warning</td>
+<td align="left">一个一般性的警告，表示在实体内容体中可能存在错误。</td>
+<td align="left">Warning: 199 Miscellaneous warning</td>
+<td align="left">固定</td>
+</tr>
+</tbody></table>
+<h3 id="3-常用的HTTP响应头"><a href="#3-常用的HTTP响应头" class="headerlink" title="3. 常用的HTTP响应头"></a>3. 常用的<code>HTTP响应头</code></h3><table>
+<thead>
+<tr>
+<th align="left">响应头</th>
+<th align="left">说明</th>
+<th align="left">示例</th>
+<th align="left">状态</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">Access-Control-Allow-Origin</td>
+<td align="left">指定哪些网站可以<code>跨域源资源共享</code></td>
+<td align="left"><code>Access-Control-Allow-Origin: *</code></td>
+<td align="left">临时</td>
+</tr>
+<tr>
+<td align="left">Accept-Patch</td>
+<td align="left">指定服务器所支持的文档补丁格式</td>
+<td align="left">Accept-Patch: text&#x2F;example;charset&#x3D;utf-8</td>
+<td align="left">固定</td>
+</tr>
+<tr>
+<td align="left">Accept-Ranges</td>
+<td align="left">服务器所支持的内容范围</td>
+<td align="left"><code>Accept-Ranges: bytes</code></td>
+<td align="left">固定</td>
+</tr>
+<tr>
+<td align="left">Age</td>
+<td align="left">响应对象在代理缓存中存在的时间，以秒为单位</td>
+<td align="left"><code>Age: 12</code></td>
+<td align="left">固定</td>
+</tr>
+<tr>
+<td align="left">Allow</td>
+<td align="left">对于特定资源的有效动作;</td>
+<td align="left"><code>Allow: GET, HEAD</code></td>
+<td align="left">固定</td>
+</tr>
+<tr>
+<td align="left">Cache-Control</td>
+<td align="left">通知从服务器到客户端内的所有缓存机制，表示它们是否可以缓存这个对象及缓存有效时间。其单位为秒</td>
+<td align="left"><code>Cache-Control: max-age=3600</code></td>
+<td align="left">固定</td>
+</tr>
+<tr>
+<td align="left">Connection</td>
+<td align="left">针对该连接所预期的选项</td>
+<td align="left"><code>Connection: close</code></td>
+<td align="left">固定</td>
+</tr>
+<tr>
+<td align="left">Content-Disposition</td>
+<td align="left">对已知MIME类型资源的描述，浏览器可以根据这个响应头决定是对返回资源的动作，如：将其下载或是打开。</td>
+<td align="left">Content-Disposition: attachment; filename&#x3D;”fname.ext”</td>
+<td align="left">固定</td>
+</tr>
+<tr>
+<td align="left">Content-Encoding</td>
+<td align="left">响应资源所使用的编码类型。</td>
+<td align="left"><code>Content-Encoding: gzip</code></td>
+<td align="left">固定</td>
+</tr>
+<tr>
+<td align="left">Content-Language</td>
+<td align="left">响就内容所使用的语言</td>
+<td align="left"><code>Content-Language: zh-cn</code></td>
+<td align="left">固定</td>
+</tr>
+<tr>
+<td align="left">Content-Length</td>
+<td align="left">响应消息体的长度，用8进制字节表示</td>
+<td align="left"><code>Content-Length: 348</code></td>
+<td align="left">固定</td>
+</tr>
+<tr>
+<td align="left">Content-Location</td>
+<td align="left">所返回的数据的一个候选位置</td>
+<td align="left"><code>Content-Location: /index.htm</code></td>
+<td align="left">固定</td>
+</tr>
+<tr>
+<td align="left">Content-MD5</td>
+<td align="left">响应内容的二进制 MD5 散列值，以 Base64 方式编码</td>
+<td align="left">Content-MD5: IDK0iSsgSW50ZWd0DiJUi&#x3D;&#x3D;</td>
+<td align="left">已淘汰</td>
+</tr>
+<tr>
+<td align="left">Content-Range</td>
+<td align="left">如果是响应部分消息，表示属于完整消息的哪个部分</td>
+<td align="left">Content-Range: bytes 21010-47021&#x2F;47022</td>
+<td align="left">固定</td>
+</tr>
+<tr>
+<td align="left">Content-Type</td>
+<td align="left">当前内容的<code>MIME</code>类型</td>
+<td align="left">Content-Type: text&#x2F;html; charset&#x3D;utf-8</td>
+<td align="left">固定</td>
+</tr>
+<tr>
+<td align="left">Date</td>
+<td align="left">此条消息被发送时的日期和时间(以<a target="_blank" rel="noopener" href="http://tools.ietf.org/html/rfc7231#section-7.1.1.1">RFC 7231</a>中定义的”HTTP日期”格式来表示)</td>
+<td align="left">Date: Tue, 15 Nov 1994 08:12:31 GMT</td>
+<td align="left">固定</td>
+</tr>
+<tr>
+<td align="left">ETag</td>
+<td align="left">对于某个资源的某个特定版本的一个标识符，通常是一个 消息散列</td>
+<td align="left">ETag: “737060cd8c284d8af7ad3082f209582d”</td>
+<td align="left">固定</td>
+</tr>
+<tr>
+<td align="left">Expires</td>
+<td align="left">指定一个日期&#x2F;时间，超过该时间则认为此回应已经过期</td>
+<td align="left">Expires: Thu, 01 Dec 1994 16:00:00 GMT</td>
+<td align="left">固定: 标准</td>
+</tr>
+<tr>
+<td align="left">Last-Modified</td>
+<td align="left">所请求的对象的最后修改日期(按照 RFC 7231 中定义的“超文本传输协议日期”格式来表示)</td>
+<td align="left">Last-Modified: Dec, 26 Dec 2015 17:30:00 GMT</td>
+<td align="left">固定</td>
+</tr>
+<tr>
+<td align="left">Link</td>
+<td align="left">用来表示与另一个资源之间的类型关系，此类型关系是在<a target="_blank" rel="noopener" href="https://tools.ietf.org/html/rfc5988">RFC 5988</a>中定义</td>
+<td align="left"><code>Link: </code>; rel&#x3D;”alternate”</td>
+<td align="left">固定</td>
+</tr>
+<tr>
+<td align="left">Location</td>
+<td align="left">用于在进行重定向，或在创建了某个新资源时使用。</td>
+<td align="left">Location: <a target="_blank" rel="noopener" href="http://www.itbilu.com/nodejs">http://www.itbilu.com/nodejs</a></td>
+<td align="left">固定</td>
+</tr>
+<tr>
+<td align="left">P3P</td>
+<td align="left">P3P策略相关设置</td>
+<td align="left">P3P: CP&#x3D;”This is not a P3P policy!</td>
+<td align="left">固定</td>
+</tr>
+<tr>
+<td align="left">Pragma</td>
+<td align="left">与具体的实现相关，这些响应头可能在请求&#x2F;回应链中的不同时候产生不同的效果</td>
+<td align="left"><code>Pragma: no-cache</code></td>
+<td align="left">固定</td>
+</tr>
+<tr>
+<td align="left">Proxy-Authenticate</td>
+<td align="left">要求在访问代理时提供身份认证信息。</td>
+<td align="left"><code>Proxy-Authenticate: Basic</code></td>
+<td align="left">固定</td>
+</tr>
+<tr>
+<td align="left">Public-Key-Pins</td>
+<td align="left">用于防止中间攻击，声明网站认证中传输层安全协议的证书散列值</td>
+<td align="left">Public-Key-Pins: max-age&#x3D;2592000; pin-sha256&#x3D;”……”;</td>
+<td align="left">固定</td>
+</tr>
+<tr>
+<td align="left">Refresh</td>
+<td align="left">用于重定向，或者当一个新的资源被创建时。默认会在5秒后刷新重定向。</td>
+<td align="left">Refresh: 5; url&#x3D;<a target="_blank" rel="noopener" href="http://itbilu.com/">http://itbilu.com</a></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">Retry-After</td>
+<td align="left">如果某个实体临时不可用，那么此协议头用于告知客户端稍后重试。其值可以是一个特定的时间段(以秒为单位)或一个超文本传输协议日期。</td>
+<td align="left">示例1:Retry-After: 120示例2: Retry-After: Dec, 26 Dec 2015 17:30:00 GMT</td>
+<td align="left">固定</td>
+</tr>
+<tr>
+<td align="left">Server</td>
+<td align="left">服务器的名称</td>
+<td align="left"><code>Server: nginx/1.6.3</code></td>
+<td align="left">固定</td>
+</tr>
+<tr>
+<td align="left">Set-Cookie</td>
+<td align="left">设置<code>HTTP cookie</code></td>
+<td align="left">Set-Cookie: UserID&#x3D;itbilu; Max-Age&#x3D;3600; Version&#x3D;1</td>
+<td align="left">固定: 标准</td>
+</tr>
+<tr>
+<td align="left">Status</td>
+<td align="left">通用网关接口的响应头字段，用来说明当前HTTP连接的响应状态。</td>
+<td align="left"><code>Status: 200 OK</code></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">Trailer</td>
+<td align="left"><code>Trailer</code>用户说明传输中分块编码的编码信息</td>
+<td align="left"><code>Trailer: Max-Forwards</code></td>
+<td align="left">固定</td>
+</tr>
+<tr>
+<td align="left">Transfer-Encoding</td>
+<td align="left">用表示实体传输给用户的编码形式。包括：<code>chunked</code>、<code>compress</code>、 <code>deflate</code>、<code>gzip</code>、<code>identity</code>。</td>
+<td align="left">Transfer-Encoding: chunked</td>
+<td align="left">固定</td>
+</tr>
+<tr>
+<td align="left">Upgrade</td>
+<td align="left">要求客户端升级到另一个高版本协议。</td>
+<td align="left">Upgrade: HTTP&#x2F;2.0, SHTTP&#x2F;1.3, IRC&#x2F;6.9, RTA&#x2F;x11</td>
+<td align="left">固定</td>
+</tr>
+<tr>
+<td align="left">Vary</td>
+<td align="left">告知下游的代理服务器，应当如何对以后的请求协议头进行匹配，以决定是否可使用已缓存的响应内容而不是重新从原服务器请求新的内容。</td>
+<td align="left"><code>Vary: *</code></td>
+<td align="left">固定</td>
+</tr>
+<tr>
+<td align="left">Via</td>
+<td align="left">告知代理服务器的客户端，当前响应是通过什么途径发送的。</td>
+<td align="left">Via: 1.0 fred, 1.1 itbilu.com (nginx&#x2F;1.6.3)</td>
+<td align="left">固定</td>
+</tr>
+<tr>
+<td align="left">Warning</td>
+<td align="left">一般性警告，告知在实体内容体中可能存在错误。</td>
+<td align="left">Warning: 199 Miscellaneous warning</td>
+<td align="left">固定</td>
+</tr>
+<tr>
+<td align="left">WWW-Authenticate</td>
+<td align="left">表示在请求获取这个实体时应当使用的认证模式。</td>
+<td align="left"><code>WWW-Authenticate: Basic</code></td>
+<td align="left">固定</td>
+</tr>
+</tbody></table>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://yufxxx.gitee.io">yuf</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://yufxxx.gitee.io/2022/10/31/http%E5%B8%B8%E8%A7%81%E8%AF%B7%E6%B1%82%E5%A4%B4%E4%B8%8E%E5%93%8D%E5%BA%94%E5%A4%B4/">https://yufxxx.gitee.io/2022/10/31/http%E5%B8%B8%E8%A7%81%E8%AF%B7%E6%B1%82%E5%A4%B4%E4%B8%8E%E5%93%8D%E5%BA%94%E5%A4%B4/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://yufxxx.gitee.io" target="_blank">yufengの小屋</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/http/">http</a><a class="post-meta__tags" href="/tags/%E8%AF%B7%E6%B1%82%E5%A4%B4%E5%93%8D%E5%BA%94%E5%A4%B4/">请求头响应头</a></div><div class="post_share"><div class="social-share" data-image="/2022/10/31/http%E5%B8%B8%E8%A7%81%E8%AF%B7%E6%B1%82%E5%A4%B4%E4%B8%8E%E5%93%8D%E5%BA%94%E5%A4%B4/1.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2022/10/13/%E6%B5%8F%E8%A7%88%E5%99%A8%E8%BF%9B%E7%A8%8B/"><img class="next-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2022/10/13/%E6%B5%8F%E8%A7%88%E5%99%A8%E8%BF%9B%E7%A8%8B/1.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">浏览器进程</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://butterfly.js.org/img/avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">yuf</div><div class="author-info__description">欢迎来到我の小屋</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">16</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">24</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/yuf4567"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/yuf4567" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:heyuf123@163.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎来到我博客主页！！！</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#http%E5%8D%8F%E8%AE%AE%EF%BC%9A"><span class="toc-number">1.</span> <span class="toc-text">http协议：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%85%B3%E4%BA%8EHTTP%E6%B6%88%E6%81%AF%E5%A4%B4"><span class="toc-number">1.0.1.</span> <span class="toc-text">1. 关于HTTP消息头</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%B8%B8%E7%94%A8%E7%9A%84HTTP%E8%AF%B7%E6%B1%82%E5%A4%B4"><span class="toc-number">1.0.2.</span> <span class="toc-text">2. 常用的HTTP请求头</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%B8%B8%E7%94%A8%E7%9A%84HTTP%E5%93%8D%E5%BA%94%E5%A4%B4"><span class="toc-number">1.0.3.</span> <span class="toc-text">3. 常用的HTTP响应头</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/10/31/http%E5%B8%B8%E8%A7%81%E8%AF%B7%E6%B1%82%E5%A4%B4%E4%B8%8E%E5%93%8D%E5%BA%94%E5%A4%B4/" title="http常见请求头与响应头"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2022/10/31/http%E5%B8%B8%E8%A7%81%E8%AF%B7%E6%B1%82%E5%A4%B4%E4%B8%8E%E5%93%8D%E5%BA%94%E5%A4%B4/1.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="http常见请求头与响应头"/></a><div class="content"><a class="title" href="/2022/10/31/http%E5%B8%B8%E8%A7%81%E8%AF%B7%E6%B1%82%E5%A4%B4%E4%B8%8E%E5%93%8D%E5%BA%94%E5%A4%B4/" title="http常见请求头与响应头">http常见请求头与响应头</a><time datetime="2022-10-31T08:16:10.000Z" title="发表于 2022-10-31 16:16:10">2022-10-31</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/10/13/%E6%B5%8F%E8%A7%88%E5%99%A8%E8%BF%9B%E7%A8%8B/" title="浏览器进程"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2022/10/13/%E6%B5%8F%E8%A7%88%E5%99%A8%E8%BF%9B%E7%A8%8B/1.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="浏览器进程"/></a><div class="content"><a class="title" href="/2022/10/13/%E6%B5%8F%E8%A7%88%E5%99%A8%E8%BF%9B%E7%A8%8B/" title="浏览器进程">浏览器进程</a><time datetime="2022-10-13T08:16:10.000Z" title="发表于 2022-10-13 16:16:10">2022-10-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/09/12/%E5%89%8D%E7%AB%AF%E7%BC%93%E5%AD%98%E6%80%BB%E7%BB%93/" title="前端缓存总结"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2022/09/12/%E5%89%8D%E7%AB%AF%E7%BC%93%E5%AD%98%E6%80%BB%E7%BB%93/1.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="前端缓存总结"/></a><div class="content"><a class="title" href="/2022/09/12/%E5%89%8D%E7%AB%AF%E7%BC%93%E5%AD%98%E6%80%BB%E7%BB%93/" title="前端缓存总结">前端缓存总结</a><time datetime="2022-09-12T09:31:18.000Z" title="发表于 2022-09-12 17:31:18">2022-09-12</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/09/11/%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97%E8%81%9A%E7%B1%BB%E6%96%B9%E6%B3%95%E5%AD%A6%E4%B9%A0/" title="时间序列聚类方法学习"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2022/09/11/%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97%E8%81%9A%E7%B1%BB%E6%96%B9%E6%B3%95%E5%AD%A6%E4%B9%A0/2.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="时间序列聚类方法学习"/></a><div class="content"><a class="title" href="/2022/09/11/%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97%E8%81%9A%E7%B1%BB%E6%96%B9%E6%B3%95%E5%AD%A6%E4%B9%A0/" title="时间序列聚类方法学习">时间序列聚类方法学习</a><time datetime="2022-09-11T13:57:18.000Z" title="发表于 2022-09-11 21:57:18">2022-09-11</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/09/04/%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/" title="踩坑记录"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2022/09/04/%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/1.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="踩坑记录"/></a><div class="content"><a class="title" href="/2022/09/04/%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/" title="踩坑记录">踩坑记录</a><time datetime="2022-09-04T13:28:16.000Z" title="发表于 2022-09-04 21:28:16">2022-09-04</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('/2022/10/31/http%E5%B8%B8%E8%A7%81%E8%AF%B7%E6%B1%82%E5%A4%B4%E4%B8%8E%E5%93%8D%E5%BA%94%E5%A4%B4/1.png')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By yuf</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"><script>function loadValine () {
+  function initValine () {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: 'xIKafwAjJDNFHqM1tQxa3K1Q-gzGzoHsz',
+      appKey: 'rPLtPmC00BYTkx1y446klT8x',
+      avatar: 'monsterid',
+      serverURLs: '',
+      emojiMaps: "",
+      path: window.location.pathname,
+      visitor: false
+    }, null))
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Valine' === 'Valine' || !true) {
+  if (true) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script></div><div class="aplayer no-destroy" data-id="8516170093" data-server="tencent" data-type="playlist" data-fixed="true" data-autoplay="true"> </div><canvas class="fireworks" mobile="true"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/fireworks.min.js"></script><script defer="defer" id="fluttering_ribbon" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-fluttering-ribbon.min.js"></script><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-nest.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = true;
+document.body.addEventListener('input', POWERMODE);
+</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/metingjs/dist/Meting.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
+  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
+
+  typeof preloader === 'object' && preloader.initLoading()
+  document.getElementById('rightside').style.cssText = "opacity: ''; transform: ''"
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+  typeof disqusjs === 'object' && disqusjs.destroy()
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+
+  typeof preloader === 'object' && preloader.endLoading()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
